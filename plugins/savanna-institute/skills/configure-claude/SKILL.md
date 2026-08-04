@@ -1,8 +1,8 @@
 ---
-description: Set up or review Claude Code for research work. Chooses a working folder, writes CLAUDE.md files, and covers the practices that make sessions productive. Use when someone is configuring Claude Code for the first time, starting work in a project folder that has no CLAUDE.md, or wants their existing setup reviewed.
+description: Set up or review Claude Code for your own work. Chooses a working folder, writes CLAUDE.md files, and covers the practices that make sessions productive. Use when someone is configuring Claude Code for the first time, starting work in a project folder that has no CLAUDE.md, or wants their existing setup reviewed.
 ---
 
-# Configure Claude Code for research work
+# Configure Claude Code
 
 You are walking a researcher through setting up Claude Code for their own work.
 
