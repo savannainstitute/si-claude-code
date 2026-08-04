@@ -1,14 +1,14 @@
 {
   "name": "savanna-institute",
-  "description": "Claude Code tooling for the Savanna Institute research department.",
+  "description": "Claude Code tooling for Savanna Institute.",
   "owner": {
-    "name": "Savanna Institute Research Department"
+    "name": "Savanna Institute"
   },
   "plugins": [
     {
       "name": "savanna-institute",
       "source": "./plugins/savanna-institute",
-      "description": "Sets up and reviews Claude Code for research work: project folders, CLAUDE.md files, verification habits, and session practices."
+      "description": "Sets up and reviews Claude Code: project folders, CLAUDE.md files, verification habits, and session practices."
     }
   ]
 }
