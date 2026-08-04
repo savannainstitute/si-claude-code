@@ -1,9 +1,9 @@
 # Claude Code setup for Savanna Institute
 
-This repository holds a small plugin that configures Claude Code for research
-work. It walks you through setting up your own environment: folders for your
-projects, standing instructions so you stop repeating yourself, and the
-practices that make sessions productive.
+This repository holds a small plugin that configures Claude Code for your work
+at Savanna Institute. It walks you through setting up your own environment:
+folders for your projects, standing instructions so you stop repeating
+yourself, and the practices that make sessions productive.
 
 You run it once to get set up, and again whenever you start a new trial, grant,
 or manuscript. It adapts to whatever you tell it about your work, so there is no
