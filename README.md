@@ -1,4 +1,4 @@
-# Claude Code setup for the research department
+# Claude Code setup for Savanna Institute
 
 This repository holds a small plugin that configures Claude Code for research
 work. It walks you through setting up your own environment: folders for your
