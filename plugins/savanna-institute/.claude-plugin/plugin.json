@@ -1,0 +1,9 @@
+{
+  "name": "savanna-institute",
+  "displayName": "Savanna Institute Research Tools",
+  "description": "Sets up and reviews Claude Code for research work: project folders, CLAUDE.md files, verification habits, and session practices.",
+  "author": {
+    "name": "Savanna Institute Research Department"
+  },
+  "repository": "https://github.com/savannainstitute/si-claude-code"
+}
