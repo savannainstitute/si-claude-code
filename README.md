@@ -2,12 +2,15 @@
 
 This repository holds a small plugin that configures Claude Code for your work
 at Savanna Institute. It walks you through setting up your own environment:
-folders for your projects, standing instructions so you stop repeating
-yourself, and the practices that make sessions productive.
+a folder for the work, standing instructions so you stop repeating yourself,
+and the habits that make sessions productive, ending with a first real task
+run the way sessions should run.
 
-You run it once to get set up, and again whenever you start a new trial, grant,
-or manuscript. It adapts to whatever you tell it about your work, so there is no
-single correct configuration.
+You go through it once. After that, when you are working in a folder that has
+no instructions file yet, Claude offers to set one up in a few questions,
+and you can run the command again any time for a quick project setup or a
+check of what you already have. It adapts to what you tell it
+about your work, so there is no single correct configuration.
 
 ## Before you start
 
@@ -92,35 +95,30 @@ In Claude Code, type:
 /savanna-institute:configure-claude
 ```
 
-It starts by asking about your work: what you are working on, where you are in
-the field season, what files you already have, whether anyone else collected the
-data. Everything after that is based on your answers.
+It checks what you already have, then asks which you want: the full
+introduction, a quick project setup, or a check of an existing setup. The
+full introduction starts with your work, in your words: what you are doing,
+what took longer than it deserved lately, where the files live. Everything
+after that is built from your answers. Later runs, when you start a new
+piece of work, take a few questions.
 
-Expect it to take half an hour or so the first time. Later runs, when you start
-a new project, are much quicker.
+Run it again any time: starting a new trial, grant, campaign, or report;
+coming back to a project after months away; or wanting a second look at a
+setup that has gone stale.
 
-Run it again any time:
+## What the full introduction sets up
 
-- Starting a new trial, grant, or manuscript
-- Coming back to a project after months away
-- Wanting a second look at a setup that has gone stale
-
-It works out which situation you are in and adjusts.
-
-## What it sets up
-
-- A folder for the work, with raw data kept separate and untouched
+- A folder for the work, with source data kept separate and untouched
 - A personal preferences file that applies to everything you do
-- A project file holding the facts and rules for that specific work: which
-  documents are authoritative, units and coordinate systems, naming
-  conventions, and where the project currently stands
-- Instructions covering the things Claude does silently by default: modifying
-  raw data, deciding a blank means zero, dropping rows in a merge, inferring
-  units
-- The practices that matter most day to day: telling Claude what to read before
-  giving it a task, keeping the state of the work in a file rather than in the
-  conversation, and one bounded task per session
-- A demonstration of plan mode, where Claude proposes before it acts
+- A project file holding the facts and rules for that specific work, with
+  an offered second-reviewer pass for placement, coverage, and fit with
+  Anthropic's own guidance
+- Where source data is involved, a rule Claude Code enforces that stops
+  Claude editing it directly
+- A first real task from your own work, run together, then a handoff into
+  plan mode, where Claude proposes before it acts, for the next one
+- The habit worth the most: an opener for your next session, written before
+  this one ends
 
 ## If something goes wrong
 
@@ -134,14 +132,18 @@ worth reporting rather than working around.
 plugins/savanna-institute/          the plugin itself
   .claude-plugin/plugin.json        manifest
   skills/configure-claude/
-    SKILL.md                        the walkthrough
-    reference/project-file-rules.md  menu of instructions for project files
+    SKILL.md                        mode routing, plus the setup check
+    reference/full-introduction.md  the guided first session
+    reference/project-setup.md      the quick per-folder setup
+    reference/enforced-rules.md     permission-rule shapes for data folders
+    reference/project-file-rules.md menu of instructions for project files
     reference/explainers.md         checked wording for the mechanics
 ```
 
 The manifest deliberately has no `version` field. Hosted in git without one,
-every commit counts as a new version, so pushing a change is all that is needed
-to release it.
+every push is a release: fresh installs get it immediately, and existing
+installs get it when auto-update is on or they update by hand, per the
+update section above. Push only states that are complete and tested.
 
 `reference/explainers.md` is checked against the official Claude Code
 documentation. If Claude Code's behavior changes, correct that file rather than
