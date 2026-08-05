@@ -8,9 +8,9 @@ Introduce a term, define it in a sentence, move on.
 
 Contents: Model; Effort; Tokens; Context window; Auto memory; When a
 session fills up; /compact and /clear; Resuming a session; How CLAUDE.md
-files are found; Permission rules; Plan mode; Running code; Skills;
-Delegation and subagents; Working directory; Desktop app versus terminal;
-Features worth teaching early.
+files are found; Permission rules; Data and privacy; Plan mode; Running
+code; Skills; Delegation and subagents; Working directory; Desktop app
+versus terminal; Features worth teaching early.
 
 ---
 
@@ -173,6 +173,28 @@ So for irreplaceable data the honest ordering is: a real backup first, the
 folder made read-only at the operating system level if they are willing, and
 the deny rule as a guardrail on top. Do not present the deny rule alone as the
 safety net.
+
+## Data and privacy
+
+Two questions matter here: whether this trains on their data, and how long
+anything is kept.
+
+Training: no, by default. On the Team plan, Anthropic does not train models
+on code or prompts sent through Claude Code, unless an org admin has
+explicitly opted the organization in, such as through the Developer Partner
+Program. That is an organization-level decision, made outside any session.
+The free, Pro, or Max version at claude.ai works differently, with its own
+training toggle that may be on for that account.
+
+Retention: conversations are kept server-side for 30 days. A plaintext copy
+of the session also sits on the machine, under `~/.claude/projects/`, for 30
+days, so a session can be resumed.
+
+Two things do leave the machine and stay longer, and neither ever happens
+without an explicit yes: `/feedback`, `/bug`, and `/share` send the
+conversation and file contents, kept five years; the session-quality
+survey's optional transcript follow-up, kept up to six months. The full
+introduction's wrap-up already offers to turn both off.
 
 ## Plan mode
 
