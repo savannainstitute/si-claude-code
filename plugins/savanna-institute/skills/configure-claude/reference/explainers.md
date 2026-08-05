@@ -6,6 +6,12 @@ framings rather than improvising, and adapt the examples to the person's work.
 
 Introduce a term, define it in a sentence, move on.
 
+Contents: Model; Effort; Tokens; Context window; Auto memory; When a
+session fills up; /compact and /clear; Resuming a session; How CLAUDE.md
+files are found; Permission rules; Plan mode; Running code; Skills;
+Delegation and subagents; Working directory; Desktop app versus terminal;
+Features worth teaching early.
+
 ---
 
 ## Model
@@ -49,8 +55,8 @@ The units text is broken into for a model to process, roughly three and a half
 characters of English each, so usually a word or part of one. Usage and cost are
 counted in tokens.
 
-Avoid saying tokens vary in size with task difficulty. A short task uses fewer
-tokens, not smaller ones.
+Avoid saying tokens vary in size with task difficulty. A short task uses
+fewer tokens; tokens themselves do not change size.
 
 ## Context window
 
@@ -68,16 +74,14 @@ Two different things come back, and the difference matters.
 
 Claude also keeps its own notes between sessions, written automatically and
 loaded at the start of the next one. They will see brief "Saved a memory" or
-"Recalled a memory" indications. It is genuinely useful and worth knowing about,
-so do not tell them nothing carries over.
+"Recalled a memory" indications. It is worth knowing about, so do not tell
+them nothing carries over.
 
-But those notes are Claude's, not theirs. They did not choose what went in and
-will not necessarily notice what did not. A CLAUDE.md file is the opposite: they
-wrote it, they can read it, and it is re-read in full every time.
-
-So the rule is not that Claude cannot remember. It is that anything which must
-not be lost goes somewhere they control. Auto memory is a convenience and
-CLAUDE.md is the record.
+But those notes are Claude's own. They did not choose what went in and will
+not necessarily notice what did not. A CLAUDE.md file is the opposite: they
+wrote it, they can read it, and it is re-read in full every time. Anything
+that must not be lost goes somewhere they control: auto memory is a
+convenience and CLAUDE.md is the record.
 
 ## When a session fills up
 
@@ -92,12 +96,10 @@ personal CLAUDE.md files. That is the argument for putting anything durable in a
 file rather than saying it once in conversation.
 
 They are not powerless over it. Running `/compact` themselves before the
-automatic pass, with a focus such as `/compact focus on the plot ID
-reconciliation`, keeps what they choose rather than what the automatic pass
-infers. A "Compact Instructions" section in CLAUDE.md can also say what to
-preserve.
-
-Do not tell them they have no control. That is wrong and they will find out.
+automatic pass, with a focus such as `/compact focus on the ID
+reconciliation decisions`, keeps what they choose rather than what the
+automatic pass infers. A "Compact Instructions" section in CLAUDE.md can
+also say what to preserve. Do not tell them they have no control.
 
 ## `/compact` and `/clear`
 
@@ -119,7 +121,7 @@ most recent session in the current folder, and `claude --resume` opens a picker
 of past ones. Sessions can be named, with `claude -n a-short-name` when starting
 or `/rename` inside one, and a named session can be reopened directly with
 `claude --resume` and the name. Naming is what makes the picker usable weeks
-later, when "which of these was the yield analysis" is otherwise a guess.
+later, when "which of these held the analysis" is otherwise a guess.
 `/export` writes the conversation to a plain text file, which is worth
 mentioning to anyone who wants a record of how an analysis decision was reached.
 
@@ -186,9 +188,8 @@ Worth demonstrating once rather than describing.
 
 ## Running code
 
-Claude does not hand over a script and hope. It runs the script, reads the
-actual error message, fixes the script, and runs it again, without the copy and
-paste loop a browser chat needs. For analysis work this loop is where most of
+Claude runs the script, reads the actual error message, fixes the script,
+and runs it again, without the copy and paste loop a browser chat needs. For analysis work this loop is where most of
 the value is, so demonstrate it on something real rather than describing it.
 
 Mechanics worth knowing:
@@ -200,8 +201,8 @@ Mechanics worth knowing:
   file path and a preview, and reads more as it needs it.
 - Each command starts fresh, so environment state does not carry from one
   command to the next. An environment activated mid-session does not stay
-  active. Anyone using conda or a virtualenv should activate it before launching
-  Claude Code, not after.
+  active. Anyone using conda or a virtualenv should activate it before
+  launching Claude Code.
 - The documentation describes a general shell tool and never names R. An
   installed R runs through it like any other command, so expect `Rscript` to
   work, but present that as how the mechanism works rather than as a documented
@@ -223,13 +224,17 @@ works in its own context and returns just the result, and it can choose a
 stronger model for that assistant than the one in the main conversation.
 
 The benefit worth naming: heavy work such as searching many files does not fill
-up the main conversation, and only the answer comes back.
+up the main conversation, and only the answer comes back. The main conversation
+waits while the assistant works, so a dispatch reads as a short pause with a
+progress note.
 
-Be precise about which part is automatic. Claude delegates to subagents on its
-own routinely, but those normally run on the same model as the main
-conversation, so a stronger model for a subagent is not default behavior. Leave
-it there. It is background about how the tool works, not a setup step, and it
-is not worth putting in a first-day CLAUDE.md.
+The setup walkthrough can demonstrate this, reading through the project
+folder and as an offered second set of eyes over the newly written
+instruction files. The everyday form is one sentence: for anything
+high-stakes, ask Claude to have a separate reviewer check it. Be precise
+about which part is automatic: Claude delegates on its own routinely, but
+those assistants normally run on the same model as the main conversation,
+so a stronger model for a subagent is a choice to ask for.
 
 ## Working directory
 
@@ -255,9 +260,7 @@ Terminal. Open a terminal, change into the project folder with `cd`, and run
 `claude`. More capable in a few advanced respects and the right choice for
 anyone already comfortable there.
 
-For someone who does not want to learn terminal commands, the desktop app is the
-better recommendation and costs them nothing. Do not push the terminal on
-someone who would rather click a button.
+Recommend the desktop app to anyone who prefers buttons to typed commands.
 
 One caveat: plugins and marketplaces are shared configuration, so adding one
 from either interface makes it available in both. If a marketplace cannot be
@@ -268,9 +271,8 @@ covers both.
 
 Interrupting. Escape in the terminal, the stop button in the desktop app. Work
 already done is kept and the conversation continues, so stopping Claude the
-moment it heads somewhere wrong is free. Anthropic's guidance is to correct as
-soon as you notice, because early correction produces better results than
-letting a wrong approach finish.
+moment it heads somewhere wrong is free. Anthropic's guidance is to correct
+as soon as you notice.
 
 Images and files. Dragging an image, screenshot, or PDF into the conversation
 works in both interfaces, and in the terminal pasting a copied image also works.
