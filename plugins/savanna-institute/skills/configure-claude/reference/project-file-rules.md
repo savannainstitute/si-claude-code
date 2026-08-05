@@ -1,65 +1,83 @@
 # Instructions for a project CLAUDE.md: a menu
 
-These close the gap between Claude's defaults and how the person already works.
-They are not lessons in research practice, and must never be delivered as
-though they were. The scientist knows why a blank cell is not a zero. What they
-do not know is that Claude, left to itself, would quietly treat it as one.
+Contents: This list is a starting set, the interview supplies the
+rest; Placement; What Anthropic's guidance says; How Claude reports;
+Data handling; Analysis; Documents; Long-running work; Sensitivity and
+irreversible actions.
 
-So when you offer an item, frame it as what Claude does by default, not why the
-underlying standard matters. "Left alone, Claude would be expected to resolve
-near-matching plot IDs across files without mentioning it" is useful.
-"Identifier consistency is important in multi-year trials" is telling a field
-scientist their own job.
-
-One limit on how hard to assert any of this. What is evidenced is the general
-pattern: where Claude lacks the knowledge a step requires, it supplies something
-plausible and reports it in the same register it uses when it is right. The
-specific forms below, the blank cell read as a zero, the silently dropped rows,
-the fuzzy-matched identifier, are what that pattern would be expected to produce
-on field data. They are not incidents on record. Offer them as defaults worth
-closing off in advance, and do not claim any of them has been seen.
-
-Length is a real constraint. An overstuffed CLAUDE.md gets ignored, including
-the parts that mattered, and Anthropic's guidance is to keep these short and
-human-readable. Pick what fits the work described in the interview. They can add
-more when they notice themselves repeating something.
+These items close the gap between Claude's defaults and how the person
+already works. Offer each as what Claude does when left alone, never as
+why the underlying standard matters; they know their own job. The
+specific failures below are expectations from that pattern, and are not
+incidents on record; never claim one has been seen. Keep the file short.
+An overstuffed CLAUDE.md gets ignored, including the parts that
+mattered. Pick what fits the work described, and write the rest from
+the interview.
 
 ## This list is a starting set; the interview supplies the rest
 
-The items below cover failures common to anyone handling collected data. They
-will not cover the work you just heard about in the interview, and they are not
-supposed to. Use them for two things: coverage of the common cases, and a
-demonstration of the form.
+The form is the transferable part: name what Claude does when left
+alone, then state what to do instead. After picking from the list,
+write the rules this person's work needs, in that form. Shapes to
+prompt you, each specific to one kind of work:
 
-The form is the transferable part. Name what Claude does when left alone, then
-state what to do instead. Anything about a person's work can be written that
-way once you know the work, and you just spent an interview finding it out.
+- A breeding program has a reference build, a marker file format, and a
+  pedigree that must stay consistent. Claude will pick whichever it
+  finds first. Name the authoritative one.
+- Imagery work has a band order, a nodata value, and a coordinate
+  system per product. Claude will infer any of them from context.
+- A budget or grant report has a fiscal year, cost categories, and an
+  indirect rate Claude has no way to know and will supply plausibly.
+- A long-running trial or program has codes and numbering that changed
+  at some point. Claude will read the current scheme as universal.
+- A communications calendar, donor list, or event plan has names and
+  statuses whose meaning the files never state. Claude will read each
+  as self-explanatory.
 
-So after picking from the list, write the rules their work actually needs. A few
-shapes to prompt you, none of which belong in a fixed list because they are
-specific to one person:
+Ask what would go wrong if Claude guessed, then write the rule that
+prevents it. The answer comes from them; the phrasing is your job.
 
-- A genomic selection program has a reference build, a marker file format, and a
-  pedigree that has to stay consistent across analyses. Claude will pick
-  whichever it finds. Name the authoritative one.
-- Remote sensing work has a band order, a nodata value, a resampling method, and
-  a coordinate system per product. Claude will infer any of them from context.
-- A budget or report has a fiscal year, cost categories, and an indirect rate
-  that Claude has no way to know and will supply plausibly.
-- A long-running trial has treatment codes and a plot numbering scheme that
-  changed at some point. Claude will read the current one as universal.
-- An ecosystem, cropping systems, or agroforestry study has species codes, a
-  block and treatment layout, and site names that carry meaning the files never
-  state. Claude will read each as self-explanatory.
+---
 
-Ask what would go wrong if Claude guessed, then write the rule that prevents it.
-The answer comes from them; the phrasing is your job.
+## Placement
+
+Preferences true of all their work belong in the personal file. Rules and
+facts of this work belong in the project file. Nothing belongs in both:
+the files are concatenated rather than ranked, and when two instructions
+conflict there is no reliable rule for which wins.
+
+---
+
+## What Anthropic's guidance says
+
+From the official memory documentation
+(code.claude.com/docs/en/memory.md), for the review pass and for anyone
+asking why a rule is phrased the way it is:
+
+- Add a line when Claude makes the same mistake a second time, when the
+  same correction gets typed again, or when a new teammate would need the
+  same context.
+- Keep each file well under its guidance ceiling: "Target under 200 lines
+  per CLAUDE.md file. Longer files consume more context and reduce
+  adherence." The files this skill writes should sit far below that.
+- Write instructions "concrete enough to verify": name the file, the
+  unit, the format, the command. A rule that cannot be checked will not
+  be followed consistently.
+- Group with headers and bullets rather than dense paragraphs.
+- "If two rules contradict each other, Claude may pick one arbitrarily."
+  Review periodically and remove stale or conflicting lines.
+- The user-level file is for personal preferences that apply everywhere;
+  the project file is for this work's standards and facts, and travels
+  with the folder.
+- An instruction that must always run at a fixed point belongs in an
+  enforced mechanism, a permission rule or a hook, and never only in a
+  CLAUDE.md.
 
 ---
 
 ## How Claude reports
 
-> State what you checked and what you found, not that something is fine.
+> State what you checked and what you found.
 
 Its default is a summary that reads as a verdict.
 
@@ -87,10 +105,10 @@ Most relevant to anyone working with collected data.
 > Never modify raw data in place. Work on copies and write outputs elsewhere.
 
 > Never decide on your own whether a blank means missing, zero, or
-> not-measured. Ask.
+> not-recorded. Ask.
 
-This is the highest-value line in most data projects, because the failure is
-invisible downstream.
+Left alone it resolves the blank silently, and nothing downstream shows
+that it did.
 
 > Never drop rows or records without reporting the count and the reason.
 
@@ -104,14 +122,14 @@ Expect merges and filters to lose rows silently.
 
 > Show identifier mismatches rather than resolving them.
 
-Left alone, expect it to resolve near-matching plot, tree, or accession IDs
+Left alone, expect it to resolve near-matching IDs, names, or codes
 across files without mentioning that it did.
 
 ---
 
 ## Analysis
 
-> Return the R script, not only the result.
+> Return the script along with the result.
 
 > Start with the simplest analysis that answers the question; add complexity
 > only when the data shows it is needed, and say why.
@@ -130,9 +148,9 @@ Otherwise a working number gets carried into the next document as settled.
 ## Documents
 
 > Treat these files as authoritative and do not search the web unless I ask:
-> [funder guidelines, journal style guide, protocol, prior drafts].
+> [funder guidelines, style guide, protocol, template, prior drafts].
 
-> This document is for [journal / funder / collaborators / internal].
+> This document is for [funder / journal / partners / board / internal].
 
 > When a figure appears in more than one document, reference the source rather
 > than retyping it, and tell me which is the source.
@@ -141,13 +159,12 @@ Otherwise a working number gets carried into the next document as settled.
 
 ---
 
-## Multi-year work
+## Long-running work
 
 > Keep a short "where things stand" section in this file current: what has been
 > done, what is next, what is unresolved.
 
-Worth arguing for on any trial that outlives a grant cycle. It costs nothing
-because Claude maintains it as work happens.
+Claude maintains it as work happens once the line exists.
 
 > When a rule here depends on an assumption, write the assumption down.
 
@@ -158,23 +175,11 @@ because Claude maintains it as work happens.
 
 ## Sensitivity and irreversible actions
 
-> Collaborator identities, precise field locations, and unpublished results do not
-> go into anything shared, published, or sent outward without asking me first.
+> Names, locations, financial details, and unpublished material do not
+> go into anything shared, published, or sent outward without asking me
+> first.
 
-> Ask before overwriting, deleting, sending, or submitting anything. Approval
-> once is not approval thereafter.
+> Ask before overwriting, deleting, sending, or submitting anything.
+> Approval once is not approval thereafter.
 
-The "every time" clause matters, because consent to one action is otherwise
-treated as consent to the pattern.
-
----
-
-## Mention at the end of setup
-
-- Add to it when they catch themselves re-explaining something.
-- Remove rules that no longer apply; a stale rule is followed as readily as a
-  live one.
-- Avoid contradictions between the personal and project files. When two
-  instructions conflict there is no reliable rule for which wins.
-- Rerunning `/savanna-institute:configure-claude` in an existing project gives
-  a review pass.
+Left alone, it treats consent to one action as consent to the pattern.
