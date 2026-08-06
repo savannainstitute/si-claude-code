@@ -87,18 +87,18 @@ CLAUDE.md and settings in full, naming what was read. Ask in one
 question what has changed in the work since they were written; "nothing"
 is a complete answer and shortens the pass. Propose line-level edits,
 each with its reason in one clause: rules that no longer match what they
-do, a stale where-things-stand note, duplicated or contradicting lines
-across the two files, universal preferences sitting at project level, a
-strand of the work no line covers, anything grown past what gets
-followed, and fit with the Placement and What Anthropic's guidance says
-sections of `${CLAUDE_SKILL_DIR}/reference/project-file-rules.md`. If
-nothing needs changing, say so and stop. Make only approved edits and
-show what changed. When the review surfaces several issues, offer in one
-sentence a dispatched second pass, its prompt containing the absolute
-paths of the files plus, copied in full from project-file-rules.md, the
-Placement, What Anthropic's guidance says, and Data handling sections,
-briefed to check placement, duplication, coverage, and fit, and to
-leave sound existing rules alone.
+do — verified against the actual code and files, not recall — a stale
+where-things-stand note, duplicated or contradicting lines across the
+two files, universal preferences sitting at project level, a strand of
+the work no line covers, anything grown past what gets followed, and
+fit with the Placement and What Anthropic's guidance says sections of
+`${CLAUDE_SKILL_DIR}/reference/project-file-rules.md`. If nothing needs
+changing, say so and stop. Make only approved edits and show what
+changed. When the review surfaces several issues, offer in one
+sentence the adversarial review dispatch from project-file-rules.md —
+files are both CLAUDE.mds, context is what they said has changed, in
+one line, or the strands as the files name them — showing what survives as a short diff and
+applying what they approve.
 
 ## When a file already exists
 
