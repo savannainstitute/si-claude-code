@@ -30,15 +30,11 @@ give. Show every draft before writing.
    few sentences worth saying aloud.
 5. Close in one message: the file paths that now exist, and that
    `/savanna-institute:configure-claude` runs a setup check or the full
-   introduction any time. In the same breath, take it or leave it,
-   offer a second set of adversarial eyes over the new file. On yes,
-   dispatch one agent whose prompt contains the absolute path of the
-   project file, the personal file's path when one exists, the named
-   strands in three lines, and, copied in full from
-   project-file-rules.md, the Placement, What Anthropic's guidance
-   says, and Data handling sections; brief it to check placement,
-   duplication, coverage, fit with the guidance, and, when the work
-   involves data, whether the copied data-handling rules that match it
-   are present, leaving sound existing rules alone. Show the result as
-   a short diff, apply what they approve. On no, or if the dispatch
+   introduction any time. In the same breath, say a second set of
+   adversarial eyes checks the new file before this ends, and that the
+   conversation waits while it runs. Run the adversarial review
+   dispatch from project-file-rules.md — files are the project file
+   and, when one exists, the personal file, context is the named
+   strands in three lines. Show what survives as a short diff, apply
+   what they approve. On an explicit decline, or if either dispatch
    errors, done.
