@@ -110,22 +110,16 @@ if Claude guessed at something in it; each answer becomes a rule. Offer
 the menu items that match the work, each in one sentence naming what
 Claude does when left alone. Then the facts worth not repeating:
 authoritative files, units or formats, whose template or guidelines
-apply, and a short where-things-stand note. The file is done when at
-least one rule could only belong to this project and every named strand
-has a rule, a fact, or a stated reason it has neither. Show the draft,
-adjust, write it.
+apply. The file is done when at least one rule could only belong to
+this project and every named strand has a rule, a fact, or a stated
+reason it has neither. Show the draft, adjust, write it.
 
-Then one judgment sentence: these files steer every future session
-here, so they are worth a second set of adversarial eyes. Offer it. On
-yes, dispatch one agent whose prompt contains: the absolute paths of
-both files, the interview strands in three lines, and, copied in full
-from project-file-rules.md, the Placement, What Anthropic's guidance
-says, and Data handling sections. Brief it to check placement,
-duplication or contradiction between the files, coverage of every
-strand, fit with the guidance, and, when the work involves data,
-whether the copied data-handling rules that match it are present,
-leaving sound existing rules alone. Show the result as a short diff, apply what
-they approve. If the dispatch errors, skip it with one sentence.
+Then, before the visit ends, say a second set of adversarial eyes will
+check these files and that the conversation waits while it runs. Run
+the adversarial review dispatch from project-file-rules.md — files are
+both CLAUDE.mds, context is the interview strands in three lines. Show
+what survives as a short diff, apply what they approve. On an explicit
+decline, or if either dispatch errors, skip it with one sentence.
 
 Settings. Read `${CLAUDE_SKILL_DIR}/reference/enforced-rules.md` and
 follow it: it covers the no-protected-data case, both file shapes, and
