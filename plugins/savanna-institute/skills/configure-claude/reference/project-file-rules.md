@@ -2,8 +2,8 @@
 
 Contents: This list is a starting set, the interview supplies the
 rest; Placement; What Anthropic's guidance says; How Claude reports;
-Data handling; Analysis; Documents; Long-running work; Sensitivity and
-irreversible actions.
+Data handling; Analysis; Documents; Long-running work; The adversarial
+review dispatch; Sensitivity and irreversible actions.
 
 These items close the gap between Claude's defaults and how the person
 already works. Offer each as what Claude does when left alone, never as
@@ -161,15 +161,50 @@ Otherwise a working number gets carried into the next document as settled.
 
 ## Long-running work
 
-> Keep a short "where things stand" section in this file current: what has been
-> done, what is next, what is unresolved.
+Left alone, Claude keeps a single "where things stand" note inside
+CLAUDE.md — it goes stale the moment a session ends unrevised, or
+grows without bound if it doesn't. Offer instead:
 
-Claude maintains it as work happens once the line exists.
+- a current-state file (suggest `docs/current-task.md`), short,
+  `@`-imported so it loads every session, rewritten entirely at each
+  close, never appended to;
+- a backlog file (suggest `docs/master-plan.md`) for known issues and
+  planned work, named by path in CLAUDE.md and read on demand, never
+  imported;
+- an append-only dated log (suggest `docs/recent-summary.md`) of what
+  each session tried and found, also named by path and read on
+  demand, never imported.
+
+Offer a session-close command that rewrites the first file, updates
+the second, and appends to the third — the split drifts as easily as
+a single note without one.
 
 > When a rule here depends on an assumption, write the assumption down.
 
 > Before renaming a column or changing a shared definition, find what else
 > references it and tell me.
+
+---
+
+## The adversarial review dispatch
+
+These files steer every future session, so before trusting them, run
+this: one agent to find problems, each finding numbered, briefed to
+check placement, duplication or contradiction between the files,
+coverage of every named strand, fit with the guidance above, and
+whether the copied Data handling rules that match the work are
+present, leaving sound existing rules alone — and, for every claim it
+makes, to verify it against the actual files, folder, and commands
+first and report only what it verified, with the evidence. Then a
+second, independent agent gets the numbered findings only, not the
+first agent's reasoning, briefed to independently re-verify each one
+against the same files and commands and say, by number, which do not
+hold up and why, defaulting to not-confirmed when the evidence is
+thin. Each agent's prompt carries the absolute paths of the files
+under review, the context lines the calling step names — the strands the
+coverage check runs against — and, copied in full, the Placement,
+What Anthropic's guidance says, Data handling, and How Claude reports
+sections above.
 
 ---
 
