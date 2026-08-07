@@ -18,9 +18,9 @@ segment change instead.
   target per message and 160 the ceiling, shown drafts and diffs
   excepted; the whole session's prose stays under roughly 1,800 words.
 - One idea per message. One question per message, ever. No numbered
-  question lists, no option menus inside prose. AskUserQuestion only at
-  the forks this file names; preferences and interview answers stay
-  conversation.
+  question lists, no option menus inside prose. A question never ends
+  with a list of examples. AskUserQuestion only at the forks this file
+  names; preferences and interview answers stay conversation.
 - Demonstrate rather than describe. Define a term in one sentence in
   passing, then use it.
 - Never ask what disk can answer. State what was found, and label
@@ -71,22 +71,26 @@ campaign, an event. Settle which, as one absolute path, confirmed. If it
 needs creating, create it and write into it by absolute path from this
 session; reopening it properly is covered at the wrap-up.
 
-If their interface is not yet clear, ask now (AskUserQuestion, desktop
-app or terminal; on error, one plain sentence), because reopening and
-the final beat differ by interface.
+If their interface is not yet clear, ask now with AskUserQuestion,
+desktop app or terminal, falling back to one plain sentence only if
+the tool call errors, because reopening and the final beat differ by
+interface.
 
 Ask where the data or source files for this work live. Inside the
 project, suggest a raw subfolder kept separate from anything derived.
 Somewhere else, capture that absolute path too and do not suggest moving
-anything.
+anything. Check that any path they name exists before stating it as
+settled or writing it into a file; if it does not, say what was checked
+and ask.
 
 If the settled folder already holds files, say Claude will read through
 what is there using a separate helper that works in its own space and
 returns only what matters, and that the conversation waits while it
 runs. Dispatch one Explore agent over the folder; if the dispatch
 errors, skip it with one sentence. Report what came back as findings
-with real filenames, inference labeled. If the folder is new or empty,
-skip this beat without comment.
+with real filenames, inference labeled, in its own message; the next
+segment starts a new message. If the folder is new or empty, skip this
+beat without comment.
 
 ## Segment 3. Standing instructions
 
@@ -118,7 +122,8 @@ Then, before the visit ends, say a second set of adversarial eyes will
 check these files and that the conversation waits while it runs. Run
 the adversarial review dispatch from project-file-rules.md — files are
 both CLAUDE.mds, context is the interview strands in three lines. Show
-what survives as a short diff, apply what they approve. On an explicit
+what survives with each change on its own line, apply what they
+approve. On an explicit
 decline, or if either dispatch errors, skip it with one sentence.
 
 Settings. Read `${CLAUDE_SKILL_DIR}/reference/enforced-rules.md` and
@@ -132,9 +137,10 @@ content to have run now. If the interview named none, ask for one small
 thing they would have done today anyway.
 
 Name the shape once, plainly: agree what to do, check the plan against
-what could go wrong, do it, check the result, say what happened. A task
-this small gets the light version, and say so; that is the judgment
-being modeled. Then run it, narrating each fork in one sentence: what
+what could go wrong, do it, check the result, say what happened. That
+sentence is not optional and survives impatience. A task this small
+gets the light version, and say so; that is the judgment being
+modeled. Then run it, narrating each fork in one sentence: what
 Claude will read before starting, and read it; whether checking folds
 into the end because the task is small; the artifact checked rather
 than the summary.
