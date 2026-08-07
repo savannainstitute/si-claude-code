@@ -23,7 +23,8 @@ govern every mode:
 
 ## Before saying anything
 
-Check quietly, without narrating the checking:
+Check quietly, without narrating the checking or announcing that a
+check is about to happen:
 
 - The personal instructions file: `$HOME/.claude/CLAUDE.md`, on Windows
   `%USERPROFILE%\.claude\CLAUDE.md`. Resolve the home directory to an
@@ -97,7 +98,7 @@ changing, say so and stop. Make only approved edits and show what
 changed. When the review surfaces several issues, offer in one
 sentence the adversarial review dispatch from project-file-rules.md —
 files are both CLAUDE.mds, context is what they said has changed, in
-one line, or the strands as the files name them — showing what survives as a short diff and
+one line, or the strands as the files name them — showing what survives with each change on its own line and
 applying what they approve.
 
 ## When a file already exists
