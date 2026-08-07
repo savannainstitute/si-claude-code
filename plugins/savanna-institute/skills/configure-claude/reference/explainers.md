@@ -6,7 +6,8 @@ framings rather than improvising, and adapt the examples to the person's work.
 
 Introduce a term, define it in a sentence, move on.
 
-Contents: Model; Effort; Tokens; Context window; Auto memory; When a
+Contents: Model; Effort; Tokens; Does this cost money; Context window;
+Auto memory; When a
 session fills up; /compact and /clear; Resuming a session; How CLAUDE.md
 files are found; Permission rules; Data and privacy; Plan mode; Running
 code; Skills; Delegation and subagents; Working directory; Desktop app
@@ -57,6 +58,14 @@ counted in tokens.
 
 Avoid saying tokens vary in size with task difficulty. A short task uses
 fewer tokens; tokens themselves do not change size.
+
+## Does this cost money
+
+Claude Code runs on the organization's Claude plan, not as a separate
+personal charge. Usage counts in tokens (see Tokens) against what the
+plan includes, and the limits depend on the plan, which Claude cannot
+see from inside a session; whoever administers the account can say.
+Nothing done in a session buys anything.
 
 ## Context window
 
@@ -189,6 +198,11 @@ training toggle that may be on for that account.
 Retention: conversations are kept server-side for 30 days. A plaintext copy
 of the session also sits on the machine, under `~/.claude/projects/`, for 30
 days, so a session can be resumed.
+
+Avoid saying nothing leaves the machine. Conversations are kept
+server-side for 30 days; the accurate short answer is that nothing
+trains on their data by default and nothing extra is sent without an
+explicit yes.
 
 Two things do leave the machine and stay longer, and neither ever happens
 without an explicit yes: `/feedback`, `/bug`, and `/share` send the
