@@ -14,8 +14,11 @@ about your work, so there is no single correct configuration.
 
 ## Before you start
 
-You need Claude Code, and git installed on your machine. If either is missing,
-or you are not sure, ask Zack.
+You need Claude Code, and git installed on your machine. Installing Claude
+Code is covered below; on Windows, git comes from
+[Git for Windows](https://git-scm.com/downloads/win). If you are not sure
+what is already there, open Claude Code and ask; it can check whether git is
+present.
 
 You do not need a GitHub account.
 
@@ -66,7 +69,8 @@ That is the whole installation. Nothing to download, nothing to unzip.
 
 If the first command does not work in the desktop app, run it once in the
 terminal instead. Plugins are shared between the two, so it only has to be done
-once, in either place. Or ask Zack.
+once, in either place. If it still fails, paste what happened into Claude and
+ask; the usual cause is git missing from the machine.
 
 ### Get updates automatically
 
@@ -122,8 +126,11 @@ setup that has gone stale.
 
 ## If something goes wrong
 
-Ask Zack. If a command above did not do what this page says it would, that is
-worth reporting rather than working around.
+Paste what happened into Claude and ask; it can usually name the missing
+piece. For questions about how any of this works, the setup command has a
+check option that answers them against your own setup. If a command above did
+not do what this page says it would, that is a bug in this setup: report it
+to Zack rather than working around it.
 
 ## For maintainers
 
