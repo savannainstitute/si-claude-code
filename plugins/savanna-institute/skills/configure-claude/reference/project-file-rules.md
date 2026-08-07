@@ -37,6 +37,12 @@ prompt you, each specific to one kind of work:
 Ask what would go wrong if Claude guessed, then write the rule that
 prevents it. The answer comes from them; the phrasing is your job.
 
+Write rules in the file owner's voice: I and me for the person, you
+for Claude. Never refer to the person in the third person, and never
+use a pronoun for them that they have not used themselves. Plain
+hyphens and words, not em dashes or arrow symbols, in anything
+written to a file.
+
 ---
 
 ## Placement
@@ -190,8 +196,8 @@ a single note without one.
 
 These files steer every future session, so before trusting them, run
 this: one agent to find problems, each finding numbered, briefed to
-check placement, duplication or contradiction between the files,
-coverage of every named strand, fit with the guidance above, and
+check placement, duplication or contradiction within or between the
+files, coverage of every named strand, fit with the guidance above, and
 whether the copied Data handling rules that match the work are
 present, leaving sound existing rules alone — and, for every claim it
 makes, to verify it against the actual files, folder, and commands
